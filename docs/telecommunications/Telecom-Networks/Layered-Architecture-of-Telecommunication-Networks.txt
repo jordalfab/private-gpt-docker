@@ -1,0 +1,9 @@
+Introduction to Public Switched Telephone Network (PSTN)
+The architecture of traditional telecommunication networks, known as the Public Switched Telephone Network (PSTN), involves several key components and processes.
+Voice services in these networks were circuit-switched, with voice calls routed using SS7 signaling. These voice channels were then multiplexed using PDH and SDH multiplexing schemes. The multiplexed voice channels, which had higher data rates, were transmitted over optical fiber networks, specifically DWDM networks.
+Data services were provided as IP services. At the link layer, IP packets were carried over ATM or Ethernet protocols. These packets were then multiplexed into higher data rates using PDH and SDH schemes and transmitted over DWDM optical fiber networks.
+Video services, with their associated data rates, could be directly multiplexed using PDH and SDH techniques. Alternatively, video services could be provided as IP packet services.
+
+Modern Telecommunication Network Architecture
+In modern telecommunication networks, all services—whether data, video, or voice—are provided as IP packet services. These IP packets are carried using the Ethernet protocol at the link layer.
+The packets are then multiplexed using SDH and OTN multiplexing technologies to achieve higher data rates. These higher data rates are subsequently transmitted over optical fiber networks, specifically DWDM networks.
