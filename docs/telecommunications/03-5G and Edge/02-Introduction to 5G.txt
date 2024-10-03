@@ -1,0 +1,121 @@
+
+5G Standars and Specification
+Let’s understand the standard bodies working on evolving the 5G ecosystem, specifically the ITU and 3GPP.
+The International Telecommunication Union (ITU) continuously defines the overall concept behind 5G technology, including technical performance and service requirements. ITU sets the design goals and key deliverables in terms of speed, latency, and other key performance indicators (KPIs).
+These guidelines are then further specified by another governing body, the 3rd Generation Partnership Project (3GPP). 3GPP produces reports and specifications that define 3GPP technologies based on the guidelines provided by the ITU. Essentially, ITU translates performance and service requirements to 3GPP, which then produces the necessary reports and specifications. If there are any recommendations, 3GPP also provides them.
+3GPP releases new specifications periodically to incorporate new features and advancements. Let’s look at the different phases and releases:
+2G Technology: Started with Phase 1 and went up to Release 98, covering specifications until 1998.
+3G Technology: From Release 99 to Release 7, covering the period up to 2007.
+4G Technology: From Release 8 to Release 14, focusing exclusively on 4G technology.
+5G Technology: All releases after Release 14 are related to 5G technology. Currently, work is in progress for Release 18, and we can expect further updates and new specifications from 3GPP in the coming months or years.
+
+3 GPP Technical Specifications Groups (TSGs)
+As we learned, 3GPP defines various specifications through different groups working on different parts of the network.
+1. Core Network and Terminals (CT):
+- This group handles specifications related to the core network and user equipment (UE).
+- Working Group 1 (CT1): Focuses on equipment-related protocols and core network protocols, including interworking with external networks and policy and charging control specifications.
+- Working Group 6 (CT6): Deals with applications related to smart cards.
+2. Radio Access Network (RAN):
+- This group is responsible for specifications related to the radio access network.
+- Working Group 1 (RAN1): Primarily works on the physical layer (PHY).
+- Working Group 2 (RAN2): Focuses on layer 2 and layer 3 protocols.
+- Working Group 3 (RAN3): Handles interworking among different technologies in the radio access network.
+- Working Group 4 (RAN4): Defines performance requirements.
+- Working Group 5 (RAN5): Conducts conformance testing before launching new technologies.
+3. Service and System Aspects (SA):
+- This group focuses on system architecture and services.
+- Working Group 1 (SA1) and Working Group 2 (SA2): Work on system architecture and services.
+- Working Group 3 (SA3): Primarily focuses on security and privacy, which are crucial for any technology.
+- Working Group 4 (SA4): Defines multimedia codec schemes and related systems and services.
+- Working Group 5 (SA5): Works on orchestration, management, and charging, evolving with leading technologies.
+- Working Group 6 (SA6): Enhances applications for ultra-reliable low latency services and critical communication applications, which are key responsibilities in the 5G ecosystem.
+Each of these groups has specific focus areas and nomenclature based on their responsibilities, ensuring comprehensive coverage of all aspects of network technology.
+
+What is 5G
+Let’s explore what 5G is and its key deliverables.
+5G technology focuses on providing superior wireless connectivity. This includes enhanced speeds, improved broadband, and robust machine-to-machine communication. The 5G ecosystem can support millions of devices per cell site, making it ideal for massive device connectivity. Additionally, 5G delivers critical, time-sensitive services through Ultra-Reliable Low Latency Communication (URLLC).
+There are three primary focus areas of 5G:
+1. Enhanced Mobile Broadband (eMBB):
+- Provides high-speed mobile broadband services, with downlink speeds up to 20 Gbps.
+- Supports applications like 3D video, ultra-high-definition screens, and 4K streaming, which require high throughput.
+2. Massive Machine-Type Communication (mMTC):
+- Enables connectivity for a vast number of devices, such as those in smart cities, smart homes, and smart buildings.
+- Facilitates seamless machine-to-machine communication.
+3. Ultra-Reliable Low Latency Communication (URLLC):
+- Delivers mission-critical applications with stringent latency requirements.
+- Supports use cases like robotic surgeries, e-health, self-driving vehicles (V2X), and augmented reality, which require real-time responsiveness.
+These focus areas enable various new use cases that were not possible with previous technologies. For example, 5G supports fixed wireless access, ultra-reliable low latency services for critical applications, and extensive machine-to-machine communication for smart infrastructure.
+In summary, 5G technology brings significant advancements in wireless connectivity, enabling a wide range of innovative applications and services.
+
+5G Key Capabilities
+For a network to be considered a true 5G network, it must meet the capabilities defined by the ITU:
+1. Peak Data Rate:
+- At the cell level, the peak data rate should be 20 Gbps. We’ll discuss how this can be achieved with various technologies and techniques in 5G in subsequent slides.
+- At the user level, the downlink throughput should be 100 Mbps.
+2. Spectrum Efficiency:
+- Spectrum efficiency, measured in bits per second per hertz, must increase with each new evolution. Spectrum is a costly asset for any telecom operator, and 5G aims to achieve three times more efficiency compared to 4G.
+3. Mobility:
+- 5G can support fast-moving users at speeds up to 500 kilometers per hour, compared to 350 kilometers per hour in 4G.
+4. Latency:
+- 5G targets a latency of 1 millisecond, a significant improvement over the 10 milliseconds in LTE or 4G.
+5. Connection Density:
+- 5G can support massive machine-to-machine communication, connecting millions of devices per cell site, which was not possible with 4G.
+6. Network Energy Efficiency:
+- With a focus on utilizing resources efficiently, 5G aims to reduce energy costs, which constitute a major part of operational expenses (OpEx). Improved energy efficiency will help enable sustainable networks going forward.
+These key capabilities are essential for realizing the full potential of 5G technology and its various applications.
+
+5G design goals
+Let’s explore the broader design goals of 5G and the purpose behind enabling this technology.
+While we understand the technical advancements in terms of latency and throughput, it’s important to look at the wider picture of what 5G aims to achieve.
+1. Flexible Architecture:
+- 5G aims to provide a more flexible architecture compared to legacy technologies. This flexibility allows for more efficient and adaptable infrastructure, reducing the need for costly overhauls with each technological advancement.
+- This flexibility also enables the introduction of new use cases and applications, creating value for all stakeholders in the 5G ecosystem.
+2. Economic Boost:
+- 5G is expected to boost the economy by enabling new use cases across various industries. Connectivity is crucial for future industries, extending beyond voice and data services to include machine-to-machine communication and ultra-reliable low latency services.
+- The introduction of third-party applications, such as machine learning and artificial intelligence, will further enhance the capabilities of 5G networks, making them more intelligent and efficient.
+3. New Use Cases:
+- 5G opens up new avenues for applications that were not possible with previous technologies. Examples include smart cities, smart homes, and smart buildings, all of which rely on extensive machine-to-machine communication.
+- Ultra-reliable low latency services will support mission-critical applications like robotic surgeries, e-health, and self-driving vehicles (V2X).
+4. Intelligent Networks:
+- With advancements in IoT, artificial intelligence, and technologies like ChatGPT, 5G can leverage these innovations to create more intelligent networks.
+- This intelligence will improve network efficiency, infrastructure, and overall ecosystem value.
+5. Efficiency and Sustainability:
+- 5G focuses on improving efficiency, particularly in terms of energy usage. Reducing energy costs and enhancing energy efficiency will help create sustainable networks for the future.
+In summary, 5G aims to provide a flexible, efficient, and intelligent network infrastructure that supports a wide range of new applications and use cases, ultimately boosting the economy and creating value for all stakeholders.
+
+5G Uses Cases
+5G technology can be utilized in various ways, focusing on three main areas: enhanced mobile broadband (eMBB), massive machine-type communications (mMTC), and ultra-reliable low latency communications (URLLC).
+1. Enhanced Mobile Broadband (eMBB):
+- Virtual and Augmented Reality: 5G enables applications like virtual reality (VR) and augmented reality (AR). For instance, vehicle companies can use AR for intelligent repairs, allowing mechanics to identify potential problem areas in advance.
+- Fixed Wireless Access: In areas where fiber reach is not possible, 5G can provide high-speed downlink and uplink, enhancing the streaming experience for high-definition 4K videos.
+2. Massive Machine-Type Communications (mMTC):
+- Transport and Logistics: 5G supports applications such as machine-to-machine communication and location tracking of containers, adding value for stakeholders in the logistics sector.
+- Manufacturing: Industrial automation benefits from 5G through connected machines and industrial robotics. For example, a vehicle company uses 5G with less than eight milliseconds of latency in their production plants to enhance efficiency.
+3. Ultra-Reliable Low Latency Communications (URLLC):
+- Healthcare: Edge computing in 5G enables use cases in the healthcare ecosystem, such as remote surgeries and real-time health monitoring.
+- Vehicle-to-Everything (V2X): 5G supports car telemetry and traffic analytics, helping to reduce accidents through smart connectivity.
+- Emergency Response: 5G enhances emergency response capabilities by providing reliable communication for energy and utility sectors, using surveillance drones and monitoring sensors.
+5G technology also supports various Internet of Things (IoT) applications, such as smart cities, smart homes, and smart buildings. These advancements create numerous opportunities for innovation and efficiency across different industries.
+In summary, 5G technology offers a wide range of use cases, from enhanced broadband services to critical machine-to-machine communication, transforming industries and improving overall connectivity.
+
+5G Contribution to Global Economy
+5G is expected to add around $1.3 trillion USD to the global GDP by 2030. This significant economic impact can be achieved by leveraging 5G across various industries. While 5G will enhance voice and data services for retail users, its primary focus will be on business-to-business (B2B) applications, providing advanced services to industries such as healthcare, smart utilities, and more.
+Key Contributions by Industry
+1. Broadband Services and Fixed Wireless Access:
+- Approximately 66% of 5G use cases will be related to enhanced broadband services and fixed wireless access. This includes applications like virtual reality (VR), augmented reality (AR), and high-definition video streaming.
+2. Massive Machine-Type Communication (mMTC) and Ultra-Reliable Low Latency Communication (URLLC):
+- The remaining 30% of 5G use cases will focus on mMTC and URLLC, enabling applications that require high reliability and low latency.
+Industry-Specific Use Cases
+1. Healthcare:
+- 5G will enable an end-to-end digital healthcare ecosystem, supporting robotic surgeries and remote consultations, even in rural areas. The ultra-reliable low latency services of 5G will be crucial for these applications.
+2. Smart Utilities:
+- Utility industries, such as electricity and water supply, can use 5G to measure performance, take readings directly from consumer devices, and perform analytics. This will help optimize resources and improve efficiency. Smart utilities are expected to contribute 25% of the GDP growth enabled by 5G.
+3. Consumer and Media Applications:
+- The gaming, entertainment, music, and OTT video sectors will benefit from 5G’s capabilities, contributing around 19% to the overall 5G-driven GDP growth.
+4. Industrial Manufacturing:
+- 5G will enable efficient production facilities and preventive maintenance through live data from manufacturing units. This will help create a robust supply chain, addressing major challenges faced during the COVID-19 pandemic. The industry 4.0 and 5.0 revolutions will further enhance manufacturing efficiency.
+5. Financial Services:
+- Artificial intelligence-powered applications in financial services will improve user experiences by leveraging 5G’s fast connectivity.
+Conclusion
+In summary, 5G technology will significantly boost the global economy by enabling new use cases and improving efficiency across various industries. Its impact will be felt not only in enhanced consumer services but also in critical B2B applications, driving innovation and economic growth.
+

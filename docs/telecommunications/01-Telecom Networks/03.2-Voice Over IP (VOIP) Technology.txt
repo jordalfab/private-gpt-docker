@@ -1,0 +1,38 @@
+Voice Over IP (VOIP) Technology
+
+VoIP is used to make voice calls by utilizing packet switching over IP networks. This technology offers several advantages:
+1. Cost Efficiency: VoIP is implemented in software and runs on commercial off-the-shelf hardware, which is significantly cheaper compared to the proprietary hardware used in PSTN switches, which are produced by only a few companies.
+2. Versatility: VoIP technology is not limited to voice services; it also supports video calling and data services. This flexibility allows for the easy implementation of new services.
+3. Bandwidth Efficiency: VoIP technology reduces bandwidth usage on the Internet by employing advanced audio compression algorithms to compress voice packets.
+
+What is a softswitch?
+Due to the numerous advantages of Voice over IP (VoIP) systems, telecom operators have started installing softswitches instead of PSTN switches. In other words, PSTN switches have evolved into softswitches, which are now used to provide VoIP services.
+Softswitches, also known as next-generation IP networks (NGN), play a crucial role in VoIP systems. They are used to establish, maintain, route, and terminate VoIP call sessions.
+
+Softswitch Architecture: Media Gateway
+The media gateway serves as the interface between the softswitch and the PSTN network. In the PSTN network, voice channels have a bandwidth of 64 kbps and are multiplexed using Time Division Multiplexing (TDM) in the form of E1s and T1s. These E1s and T1s terminate at the media gateway, which converts the voice channels into IP packets.
+To perform this conversion, the media gateway uses various codecs (compression-decompression algorithms). For example, consider a telephone in the PSTN network communicating with an IP phone connected to the media gateway. The voice channel from the telephone has a bandwidth of 64 kbps. To use less bandwidth on the IP network, the G.729 codec can be employed to compress the 64 kbps voice into 8 kbps. The compressed voice is then converted into packets and sent to the IP phone. Similarly, IP packets from the IP phone destined for the telephone are decompressed by the media gateway using the same codec and converted back into a 64 kbps voice channel.
+If compression is not desired, the G.711 codec can be used, which offers the best compatibility with the PSTN. In this case, the voice channel is converted into IP packets without compression, and vice versa.
+Another codec, G.722, is used in VoIP telephony for calls between IP phones. This codec digitizes voice with a bandwidth of about 7 kHz, compared to the 4 kHz bandwidth in normal telephony. This higher bandwidth improves voice quality by enhancing clarity and intelligibility. Despite digitizing more bandwidth, G.722 maintains the same data rate of 64 kbps, resulting in higher quality voice.
+When an IP phone using G.722 communicates with a telephone, the media gateway converts the voice into the standard telephony voice and vice versa.
+In the media gateway, voice channels are converted into IP packets, which are transported using the Real-Time Transport Protocol (RTP) at the application layer. RTP can also carry video packets, making it suitable for video calls between IP phones. This RTP stream is often referred to as the media stream.
+The media gateway can also handle other terminations. For instance, E1s and T1s can be terminated on the media gateway, and an Interactive Voice Response (IVR) server can be connected. For example, if you want to book a train ticket using an IP phone, you can connect to an IVR server, listen to announcements, and make selections using the dialing pad to complete the booking. Similarly, an announcement server can be connected to play different announcements to IP phone users. Analog telephone lines can also be connected to the media gateway, enabling communication between analog telephones and IP phones over the Internet.
+
+Softswitch Architecture: Signaling gateway
+Another crucial element of softswitch architecture is the signaling gateway.
+PSTN networks operate using SS7 signaling. The signaling gateway converts SS7 signaling into Sigtran signaling for use by the softswitch. Sigtran, short for signaling transport, is an IP extension of SS7 signaling. It uses the same call management procedures as SS7 but in an IP-based format.
+Sigtran is an application layer protocol that uses the Stream Control Transmission Protocol (SCTP) at the transport layer.
+For example, when there is an incoming call for the softswitch from the PSTN, the call information is initially carried using SS7 signaling. As this SS7 signaling passes through the signaling gateway, it is converted into Sigtran signaling. The information about the incoming PSTN call is then carried to the Media Gateway Controller using Sigtran signaling.
+
+Softswitch: Media Gateway Controller
+The Media Gateway Controller, also known as the call controller, call agent, or softswitch, is where the call control logic resides. It instructs the media gateways on the setup and teardown of calls and media.
+The Media Gateway Controller may also coordinate with the announcement server during the setup and teardown of calls. For instance, an announcement might be played to an IP phone user during call setup.
+In the case of the Public Switched Telephone Network (PSTN), we discussed value-added services. Similarly, in the case of a softswitch, these value-added services are provided using application servers. Different application servers cater to various value-added services.
+The Media Gateway Controller coordinates with the application server using SIP signaling. These value-added services include call forwarding, call waiting, video conferencing, and playing recorded messages to an IP phone user. For example, to play recorded messages to an IP phone user, media servers like the announcement server may be used. New intelligent value-added services can be quickly implemented in the softswitch using the application server.
+
+Separation of Media and Call Control
+Voice and video media are handled by the media gateways.
+The call control and signaling functions are managed by Signaling gateway and Media Gateway Controller
+So there is a separation of the media and the call control functions. This approach has several advantages.
+First of all, the media conversion that is taking place in the media gateways, it is near to the source and to the sink.
+Secondly, the call control functions have been centralized in the media gateway controllers and one media gateway controller can control multiple media gateways. And in this way, new features can easily be added to the media gateway controller in fast and quick manner.

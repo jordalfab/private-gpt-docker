@@ -1,0 +1,48 @@
+Fundamentals of IP Networking
+
+Structure of an IP Network
+An IP network consists of subnetworks. Within a subnetwork, hosts are connected to each other using Ethernet switches or Wi-Fi routers. These devices are layer two devices that operate using MAC addresses.
+Subnetworks are interconnected using routers, which are layer three devices.
+For example, if an application on one host wants to communicate with an application on another host, the TCP protocol provides reliable end-to-end delivery of packets between the two applications. The interface between the application and the TCP protocol is called a socket. A socket is a combination of an IP address and a port number, serving as an endpoint for communication.
+The application’s packet passes to the TCP layer through this socket, is sent by the TCP protocol to the corresponding socket on the destination host, and then passes to the application layer of the destination host.
+
+IPv4 IP Address Format
+There are two versions of the Internet Protocol (IP): IPv4 and IPv6. The main difference between them is the size of the IP address. IPv4 addresses are 32 bits long, while IPv6 addresses are 128 bits long. Despite the availability of IPv6, IPv4 remains the most widely used protocol.
+In IPv4, an IP address can be represented in two formats: binary and dotted decimal notation.
+Binary Format: An IPv4 address is composed of four sets of eight bits each, totaling 32 bits. For example:
+11000000 10101000 00000001 00000001
+Dotted Decimal Notation: This is the most commonly used format. Each set of eight bits (octet) is converted to its decimal equivalent and separated by dots. For example: 192.168.1.1
+In this notation, each octet is written as a decimal number, separated by dots, making it easier to read and remember.
+
+Two Key Router Functions
+A router performs two key functions: routing and forwarding. Let’s explore these functions with an example.
+Imagine a router connected to other routers on the Internet. An IP packet enters this router through one of its interfaces. The packet’s header contains the IP address of the destination host.
+As the IP packet enters the router, it can be forwarded to interface one, two, or three. Inside the router, there is a routing table, also known as the local forwarding table. The router compares the destination IP address with the address ranges in the routing table.
+If the IP address falls within address range one, the packet is forwarded to interface one.
+If the IP address falls within address range two, the packet is forwarded to interface two.
+If the IP address falls within address range three, the packet is forwarded to interface three.
+If the IP address falls within address range four, the packet is forwarded to interface one.
+This process of forwarding the packet from the input to the output interface is known as forwarding.
+The next question is: how are these routing tables built? Routing tables are constructed using routing algorithms. These algorithms determine the path an IP packet takes from the source to the destination as it passes through the router on the Internet.
+
+Routing/Forwarding table
+Each router has a routing table. Given the vast number of IP addresses, it is impractical to list each one individually. Instead, IP addresses are aggregated into ranges, making the routing table more manageable.
+In a routing table, IP packets with destination addresses within a specific range are directed to a particular interface. For example:
+Packets with destination IP addresses in range A are output to interface zero.
+Packets with destination IP addresses in range B are output to interface one.
+Packets with destination IP addresses in range C are output to interface two.
+Packets with destination IP addresses that do not match any specified range are output to interface three by default.
+When an IP packet arrives at the router, its destination IP address is compared with the ranges in the routing table:
+If the prefix of the destination IP address matches range A, the packet is sent to interface zero.
+If the prefix matches range B, the packet is sent to interface one.
+If the prefix matches range C, the packet is sent to interface two.
+If the prefix does not match any range, the packet is sent to interface three by default.
+In cases where a destination IP address matches multiple ranges, the packet is forwarded based on the longest prefix match. This means the packet is sent to the interface where the prefix has the most specific match with the destination IP address. The principle of longest prefix matching ensures that packets are routed more accurately and efficiently.
+
+IP Addressing: A Data Network Example
+Let’s explore how IP addresses are assigned in a data network. A data network can be either private or public, with the Internet being a prime example of a public data network. For this discussion, we’ll use a data network as our example.
+Connecting Hosts in a Data Network
+First, let’s understand how hosts are connected within a data network. In our example, three hosts are connected to an Ethernet switch, forming a local area network (LAN). One interface of the Ethernet switch is linked to a router interface. This setup means the hosts are connected to the Ethernet switch via wired interfaces, which then connects to the router.
+If there were only one host, it could be directly connected to the router interface. However, with multiple hosts in a LAN, they connect through the Ethernet switch to the router interface. Thus, in this scenario, the hosts interface with the data network through wired connections.
+Alternatively, a Wi-Fi base station can replace the Ethernet switch. Both the Ethernet switch and the Wi-Fi base station (or Wi-Fi router) are layer two devices. In this case, hosts connect wirelessly to the Wi-Fi base station, which then connects to the router interface via a wired connection.
+In summary, whether using an Ethernet switch with wired interfaces or a Wi-Fi base station, the network setup allows hosts to connect to the data network efficiently.
