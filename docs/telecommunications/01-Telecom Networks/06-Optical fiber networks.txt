@@ -1,0 +1,143 @@
+* Optical Fiber Access Networks (OFAN) using PON/FTTH
+
+What is Passive Optical Network (PON) in Optical Fiber Access Networks?
+First, let’s explain what a Passive Optical Network (PON) is in the context of optical fiber access networks. To do that, we need to understand what an optical fiber access network is.
+Imagine a user in a house who wants to use triple play services, which include voice, data, and video services. Typically, voice services are provided via the public switched telephone network, data services via the internet, and video services via cable TV. To access these services, the user needs a network connection, known as the Access Network.
+When optical fiber is used in this access network, it is referred to as an Optical Fiber Access Network. The predominant technology used globally for these networks is called Passive Optical Network (PON) technology.
+PON technology consists of three main components:
+Optical Line Terminal (OLT): Located at the service provider’s exchange, the OLT is responsible for sending data to and receiving data from the network.
+Optical Network Unit (ONU): Located at the user’s premises, the ONU connects the user to the PON.
+Passive Optical Splitter: Positioned between the OLT and the ONUs, this splitter divides the optical signal from the OLT and distributes it to multiple ONUs. There is one optical fiber cable between the OLT and the splitter, and separate optical fiber cables between the splitter and each ONU.
+In summary, a PON allows for efficient and cost-effective delivery of triple play services by using optical fiber technology in the access network.
+
+Passive Optical Network (PON)
+Let’s discuss the working principle of a Passive Optical Network (PON). In the downstream direction, triple play traffic (voice, data, and video) is sent from the Optical Line Terminal (OLT) towards the Optical Network Units (ONUs). The OLT converts this downstream traffic into a light signal, which is transmitted through an optical fiber cable to a passive optical splitter. The splitter is termed “passive” because it does not require a separate power supply for its operation.
+The optical splitter divides the incoming light signal into multiple light signals without altering the frequency or wavelength. This means that the same optical signal is sent to all ONUs. Each ONU then converts the optical signal back into an electrical signal and extracts its own specific traffic.
+In the upstream direction, each ONU sends its traffic as an optical signal back towards the OLT. All ONUs use the same wavelength or frequency for their upstream signals, but this upstream wavelength is different from the downstream wavelength. The optical splitter combines all incoming light signals into a single light signal, which is then transmitted to the OLT. The OLT converts this combined light signal back into an electrical signal and forwards it to the service provider.
+
+Optical Distribution Network (ODN)
+Passive optical splitters can be connected in series. For example, a passive optical splitter may divide an incoming light signal into three light signals. One of these light signals can then be directed to another passive optical splitter, which further divides it into three additional light signals.
+In the terminology of PON, the passive optical splitters and the optical fiber cables connected to them constitute the Optical Distribution Network (ODN).
+
+PON Advantages
+Passive Optical Networks (PONs) offer numerous advantages. One key benefit is their point-to-multipoint architecture. This means that a single optical fiber cable, known as the feeder optical fiber cable, runs between the Optical Line Terminal (OLT) and the passive optical splitter.
+Additionally, only one optical transceiver is needed at the OLT, which reduces the overall cost of the OLT. Since the passive optical splitter is located near the user premises, the cost of optical fiber cabling between the OLT and the splitter is minimized. The cost of the feeder fiber cable and the transceiver is distributed across the total number of customers served by the PON network, as a single feeder cable and transceiver can serve multiple Optical Network Units (ONUs).
+Furthermore, passive optical splitters do not require a power supply, allowing them to be installed anywhere with minimal maintenance, thus reducing costs. This makes PON networks highly cost-effective.
+Moreover, using optical fiber for communication provides data rates in gigabits per second, offering high-speed data transmission at a low cost. This combination of low cost and high data rates contributes to the popularity of PON networks.
+
+xDSL vs PON
+Let’s compare DSL technology with PON technology.
+In DSL technology, a modem called DSLAM is installed at the exchange side, while a DSL modem is installed at the user premises. Between the DSLAM and the DSL modem, a twisted pair copper cable is used. This same copper cable is also used for telephony services, allowing for the reuse of existing infrastructure to provide both data and telephony services simultaneously.
+DSL technology has various variants, with data rates ranging from 2 to 20 Mbps and a distance range of 3.5 to 5 km between the DSLAM and the DSL modem. However, a major disadvantage of DSL technology is that the data rate decreases as the distance between the DSLAM and the DSL modem increases.
+On the other hand, PON technology supports a much larger distance, ranging from 20 to 40 km between the exchange and the user. PON uses optical fiber, which can support data rates in gigabits per second for both upstream and downstream traffic without any degradation over distance.
+PON technology can be deployed in three configurations:
+Fiber to the Curb (FTTC) or Fiber to the Cabinet (FTTCab): In this configuration, the OLT is connected via optical fiber to a Multi-Dwelling Unit (MDU). An MDU is a real estate area with multiple separate houses managed by a single agent. Inside the MDU, a cabinet is installed at a central location, housing the MDU ONU. Twisted pair copper cables, ranging from 250 to 700 meters in length, connect the MDU ONU to individual houses. DSL technology can be used on these copper cables to provide triple play services to the residents.
+Fiber to the Building (FTTB): Here, the optical fiber runs to a building, and Ethernet LAN technology is used inside the building to provide triple play services to the users.
+Fiber to the Home (FTTH): In this configuration, the optical fiber runs directly to the user’s premises. An Optical Network Termination (ONT) unit is installed in the user’s house to enable triple play services.
+It’s important to note that the terms OLT and ONU are often used interchangeably.
+
+Evolution of PON
+Let’s discuss the evolution of Passive Optical Network (PON) technology.
+The first standards, APON (ATM-based PON) and BPON (Broadband PON), were introduced in the 1990s. APON and BPON supported downstream data rates of 1.24 Gbps and upstream data rates of 622 Mbps, as detailed in the ITU-T G.983 specifications.
+Next, the GPON (Gigabit PON) standard was introduced in 2003-2004. GPON supports downstream data rates of 2.48 Gbps and upstream data rates of 1.24 Gbps, as specified in the ITU-T G.984 series.
+In 2009-2010, the XG-PON1 (10 Gigabit PON) standard was introduced. XG-PON1 supports downstream data rates of 10 Gbps and upstream data rates of 2.48 Gbps, detailed in the ITU-T G.987 and G.988 specifications.
+Following this, the NG-PON2 (Next-Generation PON2) standard was introduced in 2014-2015. NG-PON2 supports downstream data rates of 40 Gbps and upstream data rates of 10 Gbps, as specified in the ITU-T G.989 series.
+In 2016, the XGS-PON (10 Gigabit Symmetrical PON) standard was introduced. XGS-PON supports symmetrical data rates of 10 Gbps for both downstream and upstream, detailed in the ITU-T G.9807 specification.
+Currently, the Gigabit High-Speed PON (G.HSP.x) standard is under development, aiming to further enhance PON technology.
+
+GPON Principle-Wavelength Division Multiplexing (WDM)
+Let’s discuss the working principle of Gigabit Passive Optical Network (GPON).
+GPON uses single-mode fiber, which is installed at all locations due to its low dispersion and high data rate capabilities. Communication in GPON is based on the principle of Wavelength Division Multiplexing (WDM).
+WDM allows multiple signals to be transmitted simultaneously over the same single-mode fiber by using different wavelengths of light. For downstream communication (from the OLT to the ONUs), a wavelength of 1490 nanometers is used to carry voice and data signals. For upstream communication (from the ONUs to the OLT), a wavelength of 1310 nanometers is used for voice and data signals. These two light signals do not interfere with each other because they operate at different wavelengths.
+Additionally, if video or cable TV services are required, a device called a video overlay is installed. This device transmits the video signal using a wavelength of 1550 nanometers. The video signal is combined with the other two light signals, allowing all three signals to be carried over the same single-mode fiber without interference, thanks to their different wavelengths.
+
+GPON Principle ---- Downstream data
+Now, let’s discuss how upstream data is sent from the ONUs to the OLT in a GPON network.
+The upstream data from ONU 1 is sent in time slot 1, the data from ONU 2 is sent in time slot 2, and the data from ONU 3 is sent in time slot 3. These time slots are carried using light signals of the same wavelength. When these light signals reach the splitter, it combines them into a single TDM frame.
+It is crucial to adjust the timing of these time slots to prevent collisions. The OLT is responsible for allocating time slots to each ONU and determining the timing of these slots. To do this, the OLT must measure the distance between itself and each ONU, as some ONUs may be farther away while others are closer. This distance measurement helps avoid collisions between time slots.
+This type of allocation, where the OLT assigns time slots to the ONUs and combines them into a TDM frame, is known as Time Division Multiple Access (TDMA). In this system, each ONU sends data only in its allocated time slot.
+
+* Optical Fiber Transmission Networks using DWDM Systems
+
+The bigger picture. Why Dense Wavelength Division Multiplexing (DWDM) Systems?
+To understand the importance of Dense Wavelength Division Multiplexing (DWDM) systems, we need to look at the bigger picture.
+Consider the telecommunication network of a country, which consists of many subnetworks, including 5G networks, Internet Service Provider (ISP) networks, and fixed telephony networks (also known as Public Switched Telephone Networks or PSTN).
+Suppose a fixed telephone in one city wants to connect to a fixed telephone in another city. There needs to be a means of communication between these two fixed telephone networks. Similarly, if a mobile subscriber on a 5G network wants to call another mobile subscriber, connect to a fixed telephone, or access a website hosted on an ISP network, communication between these networks is necessary. This communication is facilitated by the transmission network.
+A transmission network consists of DWDM systems, with nodes connected by optical fiber cables. For example, a PSTN network connects to the transmission network via a DWDM node, as do ISP and 5G networks. These DWDM nodes are interconnected using an optical fiber cable ring, which provides redundancy and protection for the traffic. If a cable breaks, the traffic can be rerouted along an alternate path.
+The ring connecting networks within a city is called the aggregation network, as it aggregates traffic from various networks. The DWDM system used in this ring is known as the Metro DWDM system. To connect two Metro DWDM systems, we use a long-haul DWDM transmission network, which also consists of DWDM nodes connected by optical fiber cable rings for redundancy.
+Nodes in the long-haul DWDM system connect Metro DWDM systems from different cities, ensuring seamless communication between various networks. This is how communication between different networks is achieved using the transmission network that employs DWDM systems and optical fiber cables.
+
+Wavelength Division Multiplexing (WDM) Concept
+To understand Dense Wavelength Division Multiplexing (DWDM) systems, we first need to grasp the concept of Wavelength Division Multiplexing (WDM).
+A wavelength is a ray of light with a specific wavelength that carries data as a light signal. In WDM, these wavelengths are often referred to as “colors.”
+On the transmitter side, different wavelengths (or colors) are generated. An optical multiplexer (Mux) combines these wavelengths and sends them through a single optical fiber. As these wavelengths travel through the fiber, their amplitude decreases. To maintain signal strength, optical line amplifiers are installed at intervals along the fiber to boost the amplitude of the wavelengths.
+When the wavelengths reach the demultiplexer (Demux) on the receiver side, the Demux separates the combined wavelengths, allowing the data to be extracted from each individual wavelength.
+
+Advantages of WDM Tecnhology
+The main advantage of Wavelength Division Multiplexing (WDM) technology is its ability to significantly increase the data-carrying capacity of a single optical fiber. By multiplexing multiple wavelengths through a single optical fiber cable, we can enhance the system’s capacity without the need to deploy additional cables. The data-carrying capacity of a single optical fiber can range from 100 gigabits per second to over 10 terabits per second, depending on the number of wavelengths multiplexed and the data carried on each wavelength.
+Another key advantage of WDM technology is the extended distance between adjacent nodes, such as between multiplexers, optical line amplifiers (OLAs), or between an OLA and a demultiplexer. This distance can vary from 80 kilometers to hundreds or even thousands of kilometers, depending on the specific WDM technology used. This capability allows for high data rates over long distances with a minimal number of nodes, reducing both costs and the amount of electronic equipment required for long-distance communication systems.
+
+Basics about light
+Light travels as waves, and different colors of light have different wavelengths. A wavelength is the distance between two adjacent peaks of a wave. In the context of DWDM, this distance is measured in nanometers.
+As light travels through an optical fiber, it experiences losses, which decrease the amplitude of the wavelength. These losses vary for different wavelengths. When we plot this loss (or attenuation) as a function of wavelength, we observe two ranges, or “windows,” where the loss is minimal. The first range is around 1300 nanometers, and the second is around 1500 nanometers. These windows are ideal for optical fiber communication.
+The 1300-nanometer range is used for “gray optics,” which refers to systems that send only one signal per fiber. In contrast, “colored optics” or WDM systems multiplex multiple wavelengths on a single optical fiber cable, using the window around 1500 nanometers.
+In the optical spectrum, wavelengths from 380 to 740 nanometers fall within the visible spectrum, meaning these are the wavelengths we can see. Wavelengths outside this range fall into the infrared (IR) region, which we cannot see. In the IR region, wavelengths around 1310 nanometers are used for gray optics, while the range from 1528 to 1568 nanometers is known as the C-band, and the range from 1568 to 1610 nanometers is known as the L-band. The C-band and L-band are the most commonly used bands for WDM systems.
+
+Transponder in DWDM
+Let’s discuss the function of the transponder in a Dense Wavelength Division Multiplexing (DWDM) system.
+In this example, the client is a router connected to the DWDM system through a transponder. An optical fiber cable, using a gray optics wavelength (around 1300 nanometers), connects the client to the transponder. This gray optics wavelength cannot be multiplexed with the DWDM system’s wavelengths, which are typically in the 1500 nanometer range.
+The transponder converts the gray optics wavelength into a colored wavelength, allowing it to be multiplexed with other wavelengths. At the receiver side, after demultiplexing, the transponder converts the colored wavelength back into the gray wavelength before passing it to the client.
+How does the transponder perform this conversion? First, it converts the gray optics wavelength signal into an electrical signal. Then, it applies the 3R regeneration procedure:
+Reshape: The signal’s original shape is restored, correcting any distortions caused by the nonlinear characteristics of the optical fiber.
+Regenerate: The signal’s power is boosted to its original level.
+Realign: The signal pulses are realigned to their original positions on the time axis, ensuring optimal sampling at the receiver.
+After the 3R regeneration, the electrical signal is converted back into an optical signal with a colored wavelength.
+In the reverse direction, the process is repeated. The colored wavelength is received and converted into an electrical signal. The 3R regeneration procedure is applied, and the signal is converted back into an optical signal with a gray optics wavelength before being sent to the client.
+
+Optical Supervisory Channel (OSC)
+Let’s discuss the important concept of the Optical Supervisory Channel (OSC).
+Imagine an optical multiplexer as a DWDM node located in City A, an optical line amplifier as a DWDM node in City B, another optical line amplifier in City C, and an optical demultiplexer as a node in City D. We want to manage all these nodes from a central location, such as City A, using a network management station.
+Management involves monitoring the performance of these nodes to ensure they are functioning correctly, identifying any faults, and reconfiguring the nodes as needed. To perform these management tasks, we use the Optical Supervisory Channel (OSC).
+The OSC operates on a separate wavelength, which is multiplexed with other wavelengths. At each optical line amplifier, this wavelength is separated from the others to manage the amplifier. After management tasks are performed, the OSC wavelength is multiplexed back with the other wavelengths. This process is repeated at each optical line amplifier and finally at the demultiplexer in City D.
+By using the OSC, we can manage all the nodes in the DWDM system from a central location, such as City A. This centralized management capability makes the OSC a crucial component of the DWDM system.
+
+Optical Add Drop Multiplexer (OADM)
+Let’s discuss the importance of the Optical Add Drop Multiplexer (OADM).
+At the optical multiplexer, multiple wavelengths are combined into a single optical fiber cable. However, at an intermediate city, site, or node, we might need to separate a specific wavelength from the others, or “drop” it. This is where the OADM comes into play.
+For example, the OADM can separate or drop the blue wavelength from the other wavelengths, allowing the remaining wavelengths to pass through unchanged. Additionally, the OADM can add the blue wavelength back into the stream of wavelengths. Essentially, the OADM allows us to add or drop specific wavelengths at intermediate sites.
+At nodes where another network connects to the DWDM transmission system, the OADM is essential. For instance, if the PSTN network uses the blue wavelength, the OADM is needed to add or drop this wavelength. Similarly, if the 5G network uses the red wavelength, the OADM is used to manage this wavelength. The same applies to an ISP using a gray wavelength.
+In summary, the OADM is crucial for managing specific wavelengths at intermediate nodes, enabling efficient integration and management of various networks within the DWDM system.
+
+What is Optical Amplifier?
+An optical amplifier is a device used to amplify an optical light signal directly, without the need to convert it to an electrical signal first. This means we can amplify the optical signal in the optical domain itself.
+As an optical signal travels through an optical fiber, it experiences attenuation and becomes weaker. An optical amplifier compensates for this attenuation, boosting the signal so it can be transmitted over long distances. Optical amplifiers are essential for optical communication over distances greater than 100 km.
+Here’s how it works: the optical signal enters the optical fiber and, as it travels, it gets attenuated. The weakened signal then passes through an optical amplifier, where it is amplified using a pump laser. The amplified signal is then transmitted back into the optical fiber.
+In optical communication, two types of amplifiers are commonly used:
+- Erbium-Doped Fiber Amplifier (EDFA): This type of amplifier uses a fiber doped with erbium ions to amplify the signal.
+- Raman Amplifier: This amplifier uses the Raman scattering effect to amplify the signal.
+
+Manipulatin Wavelength
+In Wavelength Division Multiplexing (WDM), data is carried on different wavelengths, which are used to connect various networks across different sites. This process involves manipulating the wavelengths, and there are three main configurations for doing so:
+1. Point-to-Point DWDM Systems: In this configuration, wavelengths are transmitted directly from one point to another without any intermediate processing.
+2. Fixed Optical Add Drop Multiplexers (OADMs): In this setup, specific wavelengths can be added or dropped at fixed points within the DWDM network.
+3. Reconfigurable Optical Add Drop Multiplexers (ROADMs): Unlike fixed OADMs, ROADMs allow for dynamic reconfiguration of the wavelengths, providing greater flexibility in managing the network.
+
+Point-to-Point DWDM
+In this setup, wavelengths travel from Site A to Site C, passing through Site B. At Site B, all wavelengths are demultiplexed and then remultiplexed. This process results in a loss of power. Additionally, manual patching is required at Site B, where wavelengths need to be manually patched using optical fiber cables. If we want to drop some wavelengths, manual patching is also necessary to connect them to transponders.
+The main cost in this configuration is the manual patching required. The demultiplexers and multiplexers have a fixed configuration and cannot be reconfigured remotely.
+For transmissions from Station A to Station C, an optical fiber cable is used. However, for transmissions from Station C to Station A, a separate optical fiber cable and the associated multiplexers and demultiplexers are required to provide full-duplex communication on the optical fiber link.
+
+Ring configuration
+In the case of a fixed Optical Add Drop Multiplexer (OADM), instead of demultiplexing all the wavelengths at Site B, we only drop or add predetermined wavelengths. The remaining wavelengths pass through without demultiplexing, suffering no power loss.
+While OADMs are cost-effective hardware, they still require manual patching to connect the dropped wavelengths to transponders. This manual patching can be a significant cost factor.
+We know that the DWDM network is arranged in the form of rings. For example, the 5G network, PSTN network, and ISP network each use a limited number of wavelengths. To add and drop these wavelengths at various sites, we use OADMs in a ring configuration.
+This configuration is cost-effective because we are not multiplexing or demultiplexing all the wavelengths, but only a limited number. For instance, we might add and drop five wavelengths at one site, two wavelengths at another, and five wavelengths at yet another site. This approach allows us to meet the specific requirements of different networks.
+Typically, two optical fiber cables are used between each node in this configuration. The advantage of using two optical fiber cables is redundancy. For example, if a cable is cut between two nodes, communication can continue on the alternate path, ensuring full-duplex communication.
+
+Re-configurable Optical Add Drop Multiplexers (ROADMs)
+ROADMs allow us to remotely configure which wavelengths are added, dropped, or passed through at a given site. A ROADM consists of two important components:
+1. Wavelength Selective Switch (WSS): This switch selects the wavelengths that are passed through and those that are dropped at the ROADM site.
+2. Amplifier: Since the wavelengths that pass through do not suffer power loss, there is an imbalance of power between the passed-through wavelengths and the dropped wavelengths. The amplifier corrects this imbalance, ensuring that all wavelengths exiting the ROADM site are balanced.
+Another key characteristic of ROADMs is their ability to switch, add, and drop wavelengths in multiple directions. For example, a ROADM can be configured to add and drop the blue wavelength towards the north direction and the red wavelength towards the south direction. If a ROADM can handle four directions (east, west, north, and south), it is referred to as a four-degree ROADM. The number of directions determines the degree of the ROADM.
+These wavelengths may also be connected to another optical fiber ring, providing flexibility and scalability in network design.
+
