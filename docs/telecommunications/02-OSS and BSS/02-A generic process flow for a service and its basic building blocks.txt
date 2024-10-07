@@ -1,0 +1,59 @@
+A Generic Process Flow for a Service and its Basic Building Blocks
+
+Before we delve further into the OSS and BSS, it is important to understand the generic process flow for a service, whether it is a prepaid or postpaid service, and the basic building blocks involved from service selection in the product catalog to charging and billing.
+1. Product Catalog:
+- The first building block is the product catalog, which is part of the BSS.
+- The product catalog manages the products offered by the communication service provider.
+- These product offerings include definitions of data services, voice services, SMS services, content provision services, or combinations of these services.
+- Products can be either prepaid or postpaid, each with its own price configuration.
+2. Information Sharing:
+- Information about these products is not only stored in the product catalog but must also be accessible to other components such as the CRM, order management system, and charging and billing system.
+
+Customer Relationship Management (CRM)
+The Customer Relationship Management (CRM) block is an integral part of the Business Support System (BSS). CRM is a system that enables business administrators in a Communication Service Provider (CSP) to interact with customers through various channels:
+- Call Center: Customers can call the CSP’s call center and speak with a representative.
+- Company Portal: Interaction can occur through the CSP’s website.
+- SMS, Email, Live Chat, Social Media: Customers can use these channels to communicate with the CSP.
+- Company Store: Customers can visit the CSP’s business store and interact with representatives in person.
+CRM procedures can be automated using CRM software, which offers several functionalities:
+1. Customer Interactions:
+- CRM software facilitates customer interactions, including registering customers and creating accounts.
+- Sales representatives can use the CRM software to register customers, or customers can self-register via the company web portal.
+- Required documents for registration can be uploaded through the CRM software.
+2. Order Placement and Payment Collection:
+- Customers can place orders for various products, and payments can be collected using the CRM software.
+3. Notifications:
+- CRM software can send notifications to customers about the status of their orders.
+4. Query Management:
+- Customers can send queries through the CRM software, and corresponding experts, such as sales and marketing representatives, can respond.
+5. Business Intelligence:
+- Based on customer data stored in the CRM software, including order history and interaction patterns, business intelligence reports can be generated to provide insights into the customer base.
+
+Registration
+Registration is a crucial part of the CRM process. During registration, the data of a new customer is created in the CRM system, which is part of the CSP’s network. The registration procedure involves the following steps:
+1. Collecting Personal Information:
+- Gather the customer’s personal information, such as their name, national identification number, and contact details.
+- Enter this information into the CRM system.
+2. Verifying Identity:
+- Verify the customer’s identity using the provided information.
+3. Creating an Account:
+- Once the customer’s identity is verified, create an account for them in the CRM system.
+- Assign a service identity to the customer, which they will use to access the telecom network services.
+At this point, the registration procedure is complete. The customer can now order their selected plan using the CRM system. Additionally, billing information is entered into the CRM, specifying how the customer will pay for the selected plan (e.g., using a credit card).
+
+Order Management
+After the CRM block passes the order to the order management block, which is also part of the BSS, the order management block verifies the order for completeness and correctness. It also determines the necessary steps for service provision.
+The order management block interacts with the inventory management block to check if sufficient resources are available to fulfill the requested service. For example, it verifies if the required resources are available for a new customer and if there is sufficient capacity in the requested service area. If any manual installation is required, the order management block coordinates with the workforce management module to ensure the CSP’s workforce can perform the installation and setup.
+Next, the order management block triggers the provisioning and activation block by sending the order information as a string. For instance, if the selected service is a postpaid voice service over a 3G network, this information is sent to the provisioning and activation block. The block then converts this information into machine language, which the network understands. This information is stored in the central database, and the service is activated in the network.
+Once the service is activated, the order management block updates the inventory management block on the status of the resources now in use. Simultaneously, it initiates the charging and billing process for the activated service.
+Finally, the order management block informs the user via the CRM that the order is complete, the service is activated, and the user can now use the service.
+
+Charging
+Once a service is active in the network, the charging and billing processes are also activated. Charging is crucial for a communication service provider as it allows them to bill customers based on their service usage.
+There are two main types of charging:
+1. Online Charging System (OCS):
+- Used for prepaid services.
+- This is real-time charging, meaning the customer has credit in their account, and as they use the service, the credit is deducted based on usage.
+2. Offline Charging:
+- Used for postpaid services.
+- This is non-real-time charging, meaning the user uses the service, and the usage is recorded. However, charging and bill generation occur after the billing cycle, which is typically a month. The user then pays the bill after it is generated.

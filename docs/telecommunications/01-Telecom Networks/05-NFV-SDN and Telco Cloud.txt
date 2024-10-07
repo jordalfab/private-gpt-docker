@@ -1,0 +1,86 @@
+* Network Function Virtualization (NFV) & Telco Cloud in Mobile Networks
+
+Overall 4G EPS Architecture
+Initially, each component of the 4G architecture was implemented as a separate physical node. For example, the Gateway was a distinct physical node implemented using custom hardware, as were the Serving Gateway, MME, HSS, and PCRF. Each of these components, when implemented as physical nodes, is referred to as a Physical Network Function (PNF).
+Challenges with Physical Network Functions:
+When a gateway is implemented as a PNF, it consists of various cards, each with its own custom and proprietary hardware. These cards run on custom operating systems and proprietary software. When connected to the backplane of the hardware, these cards collectively function as the gateway. However, this approach has several drawbacks:
+1. High Cost: The proprietary nature of the hardware makes it expensive.
+2. Bulkiness: The hardware is bulky and non-recyclable.
+3. Inflexibility: The hardware cannot be repurposed for other functions, such as serving as an MME or another gateway.
+4. Scalability Issues: Scaling up the hardware is challenging. For instance, during a live broadcast of a cricket match, the gateway’s capacity might be exceeded due to high demand. To scale up, additional hardware must be purchased and installed, which is costly and time-consuming.
+5. Underutilization: Once the high-demand event is over, the additional hardware may remain idle and underutilized.
+These limitations highlight the need for more flexible and scalable solutions in the 4G architecture.
+
+Evolution of Virtualization: Physical Network Functions (PNFs) -> Virtual Network Functions (VNFs)
+Due to the various challenges associated with Physical Network Functions (PNFs), the industry evolved towards Virtual Network Functions (VNFs). Instead of deploying network components as separate proprietary hardware, these components are now deployed as software, known as VNFs. This deployment is done on commercial off-the-shelf (COTS) hardware, which is general-purpose and significantly cheaper.
+This concept of virtualization is known as Network Function Virtualization (NFV), introduced by the European Telecommunications Standards Institute (ETSI) in 2012. By 2014, many mobile operators announced plans to launch virtualized 4G LTE networks. Initially, this virtualization was limited to the core parts of these networks.
+
+Virtual Network Functions (VNFs)
+In the Virtual Network Functions (VNFs) approach, we use commercial off-the-shelf (COTS) hardware, which is converted into COTS servers. On these servers, we have a hypervisor.
+The purpose of the hypervisor is to create and manage multiple virtual machines (VMs). This allows many VMs to run on the same COTS server. A virtual machine can be thought of as a virtual server, with each VM having its own full copy of an operating system.
+For example, in the case of a media gateway, each card of the media gateway can be considered an application running on a separate VM. By networking these applications or VMs together, we create the virtualized network function of the media gateway. This is called a virtualized network function because it is implemented in software.
+Similarly, we can have a virtualized network function for the serving gateway. As we can see, these two network functions can run on the same hardware.
+
+Advantages of Virtualization
+Virtualization offers several advantages:
+1. Rapid Creation: Virtual machines (VMs) can be created in seconds and allocated the necessary hardware resources. This means that virtual network functions (VNFs), such as media gateways or serving gateways, can be quickly deployed.
+2. Easy Upgrades: Upgrading VNFs is straightforward because it only involves updating the software, rather than replacing or modifying hardware.
+3. Scalability: If the capacity requirements of a VNF increase, it is easy to scale up by allocating more hardware resources. This flexibility allows for efficient handling of varying workloads.
+4. Redundancy: Copies of VNFs can be created quickly for redundancy purposes, ensuring high availability and reliability.
+5. Cost Efficiency: Commercial off-the-shelf (COTS) servers are much cheaper compared to custom-built hardware. Virtualization allows these COTS servers to be efficiently utilized, reducing overall costs.
+
+NFV Architecture by ETSI
+The original NFV architecture proposed by ETSI consists of three main components:
+1. NFV Infrastructure (NFVI): At the bottom layer, we have commercial off-the-shelf (COTS) hardware resources. This includes:
+- Computing resources: Computing servers
+- Storage resources: Storage servers
+- Networking devices: Routers and switches
+Using the virtualization layer, which includes the hypervisor, these physical resources are abstracted and logically partitioned into:
+- Virtual computing resources
+- Virtual storage resources
+- Virtual networking resources
+These virtual resources are then allocated to virtual machines (VMs). Each VM can run a different virtual network function (VNF). For example, one VNF might run in one VM, another VNF in a different VM, and so on. A VNF is essentially a software implementation of a network function.
+2. Virtualization Layer: This layer abstracts the physical resources and partitions them into virtual resources. The hypervisor plays a crucial role in this process by creating and managing multiple VMs on the same COTS hardware.
+3. Management and Orchestration (MANO): This component is responsible for managing the hardware resources, partitioning them using the virtualization layer, and overseeing the virtual resources and VNFs. MANO ensures efficient operation and coordination of the entire NFV environment.
+
+Network Function Virtualization (NFV)
+In the case of 4G LTE, you can have a scenario where various network functions are virtualized. For example, you might have:
+- One virtual network function (VNF) for the media gateway
+- Another VNF for the serving gateway
+- A VNF for the Policy and Charging Function (PCF)
+- A VNF for the Mobility Management Entity (MME)
+- A VNF for the Home Subscriber Server (HSS)
+- Additionally, you can have multiple VNFs for redundancy purposes.
+All these VNFs run on infrastructure based on commercial off-the-shelf (COTS) hardware, which includes compute servers, storage servers, and networking devices. In other words, the individual nodes in the LTE core network, which previously consisted of proprietary hardware, are now implemented in software as VNFs. These VNFs operate on NFV infrastructure built on COTS hardware.
+
+Telco Cloud & Openstack as Cloud Management System
+To virtualize the core network of 4G LTE, multiple commercial off-the-shelf (COTS) servers are required. A telco cloud is essentially a data center that contains a large number of these COTS servers, which are arranged in racks. Each rack includes multiple storage servers, compute servers, and networking devices that connect these servers. Each server has a hypervisor installed, which converts physical servers into virtual servers.
+A telco cloud data center is designed to be highly scalable and flexible, allowing for the addition of more servers as needed. It is also designed to be highly available and performant, with redundant power and cooling sources. Additionally, a telco cloud has multiple internet connections to ensure continuous connectivity with the outside world.
+In the telco cloud, multiple COTS servers each have a hypervisor installed, which could be a CentOS hypervisor or another type. To manage this overall cloud, a cloud management system is required. OpenStack is a widely used cloud management system in the telecom industry. It is popular because it is free and open-source.
+On top of the hypervisor layer, there is a common OpenStack layer used to manage the entire cloud. Telecom operators use OpenStack to build and manage their telco cloud networks. With OpenStack, virtual machines can be created and networked with one another efficiently.
+
+
+* Integration of NFV and Software Defined Networking (SDN) in Telco Cloud
+
+Traditional IP Networks
+A traditional IP network consists of interconnected routers, each containing a control plane and a data plane. The control plane uses a routing algorithm to determine the routing table, also known as the forwarding table. This table is then provided to the data plane.
+The data plane uses the forwarding table to decide which output port incoming packets should be sent to. This decision is based on the destination IP address in the packet’s header.
+For example, when a packet enters a router’s input port, the router reads the destination IP address in the packet’s header. Suppose the destination IP address is 0111. The router matches this address with the entries in the forwarding table. If the table indicates that packets with the destination address 0111 should be forwarded to port two, the router sends the packet to port two. The next router in the path repeats this process, using its own forwarding table to determine the packet’s next hop.
+In this way, end-to-end routing of IP packets occurs in a traditional IP network, with each router independently managing its control plane and data plane.
+
+What is Software Defined Networking?
+Software-Defined Networking (SDN) involves separating the control plane from the data plane. In traditional networks, both planes are implemented within the router. However, in SDN, only the data plane resides in the router, while the control plane is centralized.
+The control plane, implemented in an SDN controller, can be hosted on a commercial off-the-shelf server. This controller computes the routing tables for the routers and installs them on individual routers. Thus, the data plane in the routers is responsible for forwarding IP packets based on the destination IP address and the routing table.
+There are various definitions and interpretations of SDN, but the most widely accepted one is by the Open Networking Foundation. They define SDN as the physical separation of the network control plane from the forwarding plane (data plane), with one control plane managing multiple devices. This control plane is centralized in the controller.
+The most commonly used protocol between the controller and the data plane of the routers is the OpenFlow Protocol.
+
+Advantages of Software Defined Networking
+Software-Defined Networking (SDN) offers several advantages. One of the key benefits is that the entire network can be configured programmatically from a centralized location, the SDN controller. This eliminates the need for technicians to manually configure individual routers, allowing them to manage the network more efficiently.
+This centralized management makes the network more agile, as it becomes much easier to adjust the network configuration to meet changing traffic demands. Consequently, SDN enables the network to adapt more readily to varying traffic needs.
+
+How SDN & NFV are used together in Telco Cloud?
+Now, let’s explore how Software-Defined Networking (SDN) and Network Function Virtualization (NFV) can be used together in the telco cloud.
+Virtual Network Functions (VNFs) run on virtual machines (VMs), and these VNFs need to communicate with each other both inside and outside the cloud. This means that the VMs hosting these VNFs also need to establish communication within and beyond the cloud. To facilitate this communication, a network is required.
+Using NFV, we can create virtual routers and virtual firewalls for this network. SDN allows us to control this network programmatically from a centralized location. Thus, SDN and NFV are complementary technologies.
+By leveraging these two technologies, we can create programmable networks that are more agile and responsive to changing traffic demands. Additionally, this approach reduces hardware costs, as most of the infrastructure is virtualized and runs on commercial off-the-shelf hardware.
+

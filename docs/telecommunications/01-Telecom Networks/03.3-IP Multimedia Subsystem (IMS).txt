@@ -1,0 +1,74 @@
+IP Multimedia Subsystem (IMS)
+
+
+What is IP Multimedia Subsystems (IMS)
+PSTN switches evolved into soft switches, and now soft switches are evolving into IMS. IMS is not a protocol; rather, it is an architecture used to provide Voice over IP (VoIP) and a range of other IP-based multimedia services. IMS is an open architecture, primarily developed by the Third Generation Partnership Project (3GPP).
+The Third Generation Partnership Project is an international consortium of major telecom operators and vendors. This consortium developed the 3G, 4G, and 5G mobile communication systems, where IMS is used to provide VoIP services. IMS can work with both wireless and fixed networks, facilitating fixed-wireless network convergence.
+To understand this better, consider the following example:
+A mobile user has a DSL modem at home for internet access, connected to a Wi-Fi router. Suppose this user makes a VoIP call using IMS. During the call, the user moves out of the Wi-Fi router’s range and connects to the internet via a mobile network, which could be 3G, 4G, or 5G. The VoIP call is seamlessly handed over from the Wi-Fi router to the mobile network, demonstrating seamless mobility between the home DSL and the mobile network.
+In summary, IMS uses IP to provide a unified service architecture for all networks, whether fixed or wireless.
+
+IMS Features
+The IMS architecture is divided into layers to ensure scalability and flexibility. At the application layer, various application servers provide different services. To increase these services, new application servers can be installed, making scalability straightforward. Different types of application servers offer various services, providing flexibility.
+IMS is an access-agnostic network, meaning it can utilize different types of access networks at the transport layer. An access network connects the end user to the IMS and can include DSL, Wi-Fi, mobile networks, and PSTN networks. This access-agnostic nature allows IMS to connect various devices using different access networks.
+IMS is also backward compatible, meaning it can connect to legacy telecommunication systems, such as the PSTN system. Additionally, IMS features an open architecture and interfaces. The entities within IMS and the interfaces between them are defined by open standards, making them vendor-independent. This means any vendor can use these entities and interfaces.
+
+IMS Architecture-Different Layers
+Let’s discuss the different layers in the architecture of the IP Multimedia Subsystem (IMS).
+Application Layer: This layer contains the service logic and intelligence required to deliver various services. The service logic and intelligence are implemented in application servers, with different servers dedicated to different services.
+Control Layer: This layer manages the mechanisms needed to control sessions between endpoints. For example, if a mobile phone calls a landline, the control layer manages the call session.
+Transport Layer: This layer connects end devices to the IMS network using various access technologies.
+
+IMS Control Layer: CSCF, HSS, MRF, MGCF, BGCF
+The IMS control layer is the cornerstone of the IMS architecture, responsible for regulating communication flows. The most important function within this layer is the Call Session Control Function (CSCF), which manages call sessions between devices. For example, if one device calls another, the CSCF controls this call session. Additionally, the CSCF coordinates with the application server to provide various services to users.
+Another key component is the Home Subscriber Server (HSS), a centralized database containing profiles of users on the IMS network. These profiles specify the services a user is authorized to use and include security keys for user authentication, ensuring that only genuine users access the services they are entitled to.
+The Media Resource Function (MRF) provides media-related functions such as playing dial tones and making digital announcements to users.
+The Media Gateway Control Function (MGCF) facilitates interworking between the IMS network and legacy PSTN networks. This interworking is achieved using the Media Gateway and the Signaling Gateway.
+Lastly, the Border Gateway Control Function (BGCF) manages calls that cross network boundaries. For instance, if a mobile phone calls a landline, the BGCF routes the call to the MGCF, which connects to the PSTN network.
+
+Call Session Control Functions (CSCFs): P(Proxy)-CSCF
+CSCFs are SIP servers used to analyze and route SIP messages that control call sessions. There are three types of CSCFs: Proxy Call Session Control Function (P-CSCF), Serving Call Session Control Function (S-CSCF), and Interrogating Call Session Control Function (I-CSCF).
+First, let’s discuss the Proxy Call Session Control Function (P-CSCF).
+The P-CSCF is the first point of contact for a device with the IMS network and sits at the gateway of the IMS network. For example, if a user wants to register with the IMS network or make a VoIP call, the device sends a SIP request to the P-CSCF. The P-CSCF then routes this SIP request to the appropriate IMS node. If the device wants to register, the P-CSCF routes the request to the I-CSCF.
+The P-CSCF also provides security against flooding attacks. If a device attempts to flood the IMS network with fake SIP requests, the P-CSCF intercepts and stops these attacks, ensuring network security.
+In the case of end-to-end voice or multimedia calls, the P-CSCF ensures Quality of Service (QoS). It manages parameters such as the bit rate, bandwidth, and maximum packet delay for the call, ensuring a high-quality communication experience.
+
+Call Session Control Functions (CSCFs): I(Interrogating)-CSCF
+Previously, we saw that if a device wants to register with the IMS network, the Proxy Call Session Control Function (P-CSCF) routes its request to the I-CSCF. The I-CSCF then queries the Home Subscriber Server (HSS) to determine if the device is already registered with the IMS network. If the device is not registered, the I-CSCF assigns a Serving Call Session Control Function (S-CSCF) to it.
+Similarly, if there is an incoming call from another IMS network for a user in this IMS network, the call is routed to the I-CSCF. The I-CSCF queries the HSS to find the S-CSCF of the called device and then forwards the call to the corresponding S-CSCF to which the device is registered.
+Call Session Control Functions (CSCFs): S(Serving)-CSCF
+During the registration procedure, the Interrogating Call Session Control Function (I-CSCF) assigns the S-CSCF to a device and forwards the registration request to it. The S-CSCF then queries the Home Subscriber Server (HSS) to retrieve the security keys for the device. Using these keys, the S-CSCF authenticates the device, verifying that it is genuine. If the authentication is successful, the S-CSCF registers the device.
+Once a device is registered, if it wants to make a voice call, the SIP request for the call first goes to the Proxy Call Session Control Function (P-CSCF), which then forwards the request to the S-CSCF. The S-CSCF may interact with application servers, such as the telephony application server, to set up the voice call.
+Since the S-CSCF is centrally located in the IMS network, it can interact with both application servers and devices. This central position makes it an ideal location for generating Call Detail Records (CDRs). CDRs contain information about the types and amounts of services used by a device in the IMS network, which are subsequently used for billing purposes.
+
+Application Server (AS) in IMS
+The Call Session Control Functions (CSCF) provide basic call processing and routing services during call setup. However, to offer additional or supplementary services such as call line hiding or call diversion, an Application Server (AS) is required.
+Similarly, to deliver other value-added services over the IMS network, such as instant messaging, gaming, and video conferencing, application servers are essential. These servers implement the necessary functionalities to provide these enhanced services.
+
+Protocols used in IMS
+Let’s discuss the protocols used in the IMS.
+SIP Protocol: The Session Initiation Protocol (SIP) is used to establish, modify, and terminate call sessions.
+Diameter Protocol: The Diameter protocol is used for authentication, authorization, and billing of users and devices. It ensures secure and accurate user management.
+Real-Time Protocol (RTP): Once a call is established, the RTP media stream is set up between the devices. This stream carries voice packets for voice calls and video packets for conference calls.
+
+Session Initiation Protocol (SIP) in IMS
+SIP is an application layer protocol that is simple, flexible, and powerful. It is used to create, modify, and terminate sessions. SIP packets sometimes carry the Session Description Protocol (SDP).
+To establish a call between two devices, they first need to negotiate parameters such as IP addresses, port numbers, codecs, and required bandwidth. These parameters are carried inside SDP packets, which are then encapsulated within SIP packets. These SIP packets are exchanged between the calling and receiving devices to negotiate the necessary parameters.
+
+Services Provided by SIP
+The Session Initiation Protocol (SIP) provides several key services:
+User Location Service: Locates the IP address of the called device.
+User Availability Service: Determines the availability of the called device.
+User Capability Service: Negotiates device capabilities using the Session Description Protocol (SDP) during call setup. This includes parameters such as codecs, IP addresses, port numbers, and required bandwidth.
+Session Setup Signaling: Establishes a call session.
+Session Management Signaling: Transfers or modifies an existing call.
+
+SIP Methods
+The Session Initiation Protocol (SIP) is based on a client-server model, where a SIP user agent client sends a request to a SIP user agent server, and the server responds with a response message. SIP requests, also known as SIP methods, include the following types:
+INVITE: Used to establish a session.
+ACK (Acknowledgment): Confirms the final response during a signaling sequence, indicating that the call can be set up.
+BYE: Used to end a session.
+CANCEL: Used to cancel the establishment of a session.
+REGISTER: Allows a user to communicate its location (hostname and IP address) to the server it is registering with.
+OPTIONS: Used by a user to query a server about its capabilities.
+

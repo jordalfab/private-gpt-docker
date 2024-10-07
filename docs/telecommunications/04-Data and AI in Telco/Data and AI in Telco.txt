@@ -1,0 +1,42 @@
+Introduction to Telco Data & AI in Capgemini
+- Growth in Data & AI: The telco space saw a 36% growth in data and AI last year, which is double the average growth in this sector.
+- Partnerships: Emphasis on the importance of partnerships with leading companies and recognition by analysts.
+Offer Structure
+The offer is structured around three main pillars:
+1. Customer First:
+- Focus on churn prevention and improving customer engagement.
+- Use of data to treat customers as individuals rather than segments.
+- Automation and embedding data into product management.
+2. Network Side:
+- AI applications in customer activity data and network optimization.
+- Examples include truckroll optimization, anomaly detection, and energy efficiency improvements.
+- Use of data to support large investments in new technologies like 5G.
+3. Enterprise Management:
+- Use of data to manage finances, detect fraud, and recover money.
+- Importance of strong data and AI foundations, including data estate modernization and machine learning operations (MLOps).
+Case Studies
+1. Wintry:
+- Contextual marketing automation to improve customer experience and reduce churn.
+- Collaboration with partners like Google Cloud and Adobe.
+2. Orange:
+- Use of image analysis to improve the quality of fiber network installations.
+- Development of a system to analyze technician photos and update network databases.
+3. Deutsche Telekom:
+- Assessment of data capabilities and development of use cases for regional operators.
+- Focus on cloudification and data utilization to improve operations and customer insights.
+Future Outlook
+- Collaborative Data Ecosystems: Emphasis on combining data from various sources to create new services and improve global outcomes.
+- Data Monetization: Potential for telcos to act as ecosystem enablers and monetize data in the future.
+Conclusion
+- The presentation highlights the critical role of data and AI in transforming the telco industry, improving customer experiences, optimizing networks, and managing enterprise operations.
+- The ongoing projects and future outlook suggest a significant impact on the industry, with a focus on innovation and collaboration.
+
+Data Estate Modernization For Communications
+The cloud provides CSPs with a way to overcome the most serious challenges on data infrastructures, including data accessibility, scalability at controlled cost, availability of advanced analytics/AI tools, and infrastructure agility. Cloud data platforms empower the digital transformation by enabling the key analytical use cases of CSPs across customer management, network management and business management. The cloud strategy for data estates can be driven by use cases, redeveloping them in cloud-native form, or driven by platforms, supporting a quicker transition. In either case,
+IDEA helps CSPs benefit from Capgemini’s range of experience in data estate modernization to secure and accelerate the transition, shortening the delivery time by up to 40%.
+
+Point-of-view: Data-driven Open Assurance
+To be useful and fulfill its promises, data needs to be liberated, accessible, and understood – and it is not today in most legacy OSS architectures. CSPs can start implementing an Open Assurance framework today to bring the full benefits of modern AI and analytics. They can then get a deeper, more holistic understanding of their operations and bring information to bear more rapidly. They can build better closed-loop automation for more autonomous networks, thus simultaneously enabling higher efficiency and higher quality of service. High investment costs in new network technologies
+and threatened margins make it necessary to optimize operations costs while satisfying strong demands for quality from customers. CSPs need to transform their operations in general, and Service Assurance more specifically. We have shown how Open Assurance can be implemented in an agile, iterative way into legacy OSSs, morphing them into a more agile, data-driven OSS supporting a higher level of network autonomy, while avoiding the risks associated with massive upheavals.
+
+

@@ -1,0 +1,99 @@
+Internet Architecture Overview
+
+Network Edge Devices
+First, let’s discuss network edge devices. Whenever you want to connect to the Internet, you typically use a computer, laptop, or smartphone. For instance, if you’re using a smartphone to browse the Internet, you’ll use a web browser on your device.
+This web browser is a client program that you run on your device, which is referred to as the Client. Using this device, you connect to a server. For example, if you want to use the Google search engine, you connect to the Google server where the search engine application is running. These servers are usually located in data centers, which are dedicated buildings housing servers for applications like Gmail or the Google search engine.
+Since both the client and the server are located at the edge of the Internet, they are called network edge devices. Additionally, because the client and server are running application software, they are also known as hosts.
+
+Access Network and Physical Media
+The part of the network where a client connects to the Internet is called the Access Network. This access network can take various forms:
+Mobile Network: For example, a mobile device connecting to the Internet using a 4G or 5G network.
+Wi-Fi Network: For instance, within a home, there is a residential access network with a Wi-Fi router. You can connect to this Wi-Fi router using your mobile device.
+Institutional Network: For example, a company’s local area network (LAN) where you connect using a wired cable.
+All these examples represent different types of access networks. These access networks are connected to the Internet through an edge router.
+Within the access network, different types of media are used:
+Wireless Medium: The medium between a mobile device and the 4G or 5G network tower, as well as in Wi-Fi access networks.
+Wired Medium: In enterprise networks, computers connect to the access network using wired cables.
+
+Network Core
+The access network connects to the core network through an access router. The core network of the Internet consists of various Internet Service Providers (ISPs), which can be national, global, local, or regional. Each ISP’s network is made up of interconnected routers, and these ISP networks are also interconnected with one another. Thus, the Internet can be thought of as a network of networks.
+
+Internet Structure: Network of Networks
+A host connects to the Internet using the access network, also known as the access ISP. These access ISPs must be interconnected so that hosts can send packets to one another, creating a complex network of networks. To explain the Internet’s structure, we’ll take a step-by-step approach.
+There are millions of access ISPs worldwide. Connecting each access ISP to every other access ISP is impractical and costly. Instead, access ISPs connect to global ISPs, paying them for Internet connectivity. Naturally, multiple global ISPs exist, and they need to interconnect. This is achieved through Internet Exchange Points (IXPs), which connect ISPs using peering links.
+Reaching every part of a country is challenging for a single ISP, leading to the emergence of regional ISPs. Access ISPs first connect to regional ISPs, which then connect to national or global ISPs. Access ISPs pay regional ISPs for connectivity, and regional ISPs pay global ISPs.
+Companies like Google and Microsoft, known as content provider networks, offer web services to billions of people. They may establish their own networks to reduce costs and latency, bypassing Tier 1 ISPs when possible. However, some end users are only reachable through Tier 1 ISPs, so content providers also connect to them, paying for the traffic that passes through.
+The Internet’s structure consists of three tiers of ISPs:
+1. Tier 1 ISPs: Examples include AT&T, Sprint, and NTT. These ISPs operate nationally and internationally, providing extensive infrastructure for Internet connectivity. They connect to each other and to regional ISPs through IXPs.
+2. Regional ISPs: These connect to Tier 1 ISPs and provide connectivity to access ISPs.
+3. Access ISPs: These connect end users to the Internet, either directly or through regional ISPs.
+
+How to solve the complexity of Internet/Computer networks?
+Computer networks, especially the Internet, are inherently complex due to their numerous components, such as hosts, routers, and various transmission media (wireless, wired, and optical fiber). Additionally, the Internet supports a wide range of applications, protocols, hardware, and software.
+To manage and organize this complexity, a solution known as the layered approach is used
+
+Internet protocol stack
+The protocols used on the Internet are divided into five layers, collectively known as the Internet Protocol Stack.
+Suppose an application is running on a host and wants to send a message in the form of a packet to another application on a different host. The process works as follows:
+1. Application Layer: The application layer on the sending host creates the message and sends it to the transport layer.
+2. Transport Layer: The transport layer adds its header to the packet, transforming it into a segment. This segment is then sent to the network layer.
+3. Network Layer: The network layer adds its header, turning the segment into a datagram. The datagram is then passed to the link layer.
+4. Link Layer: The link layer attaches its header, converting the datagram into a frame. This frame is then sent to the physical layer.
+5. Physical Layer: The physical layer converts the frame into a physical signal, which is transmitted over the Internet.
+When the packet reaches the destination host, the process is reversed:
+1. Physical Layer: The physical layer converts the signal back into bits and passes it to the link layer.
+2. Link Layer: The link layer removes its header and sends the resulting packet to the network layer.
+3. Network Layer: The network layer removes its header and forwards the packet to the transport layer.
+4. Transport Layer: The transport layer removes its header and delivers the packet to the application layer.
+5. Application Layer: The application layer receives the original message.
+This layered approach ensures that changes in one layer do not affect the other layers, maintaining transparency and modularity within the protocol stack.
+
+Physical Layer
+The physical layer lies just below the link layer, also known as the data link layer. It receives data from the data link layer in the form of packets and adds synchronization bits to these packets. These synchronization bits help the receiver detect the start of a packet.
+The physical layer then converts the packet into a physical signal using a process called modulation. The type of modulation used depends on the underlying physical medium, whether it is wireless, wired, or optical fiber.
+Wireless Medium: The signal travels through the medium as an electromagnetic wave.
+Wired Medium: The signal travels as an electrical current.
+Optical Fiber: The signal travels as a light signal.
+The physical layer is responsible for moving the packet from one node to the next immediate node.
+
+Data Link Layer
+The data link layer sits just above the physical layer and works in conjunction with it to move frames from one node to the next immediate node. The data link layer receives packets from the network layer and adds its own header, transforming the packet into a frame, which it then sends to the next node.
+If the data link layer sends frames at a very high rate, the receiving node may become overwhelmed and fail to receive the frames correctly. To prevent this, the data link layer performs flow control, slowing down the transmission rate to ensure the receiver can handle the incoming frames.
+Additionally, if any frames are received with errors, the data link layer performs error control by resending those frames.
+A well-known protocol used at the data link layer is the Ethernet protocol, commonly used in local area networks (LANs). Devices operating up to layer two are known as Ethernet switches. These switches forward frames based on the source and destination MAC addresses found in the frame header.
+
+Network Layer
+The network layer sits just above the data link layer and is responsible for end-to-end routing of packets from the source host to the destination host. For example, if Host A wants to send a packet to Host B, the network layer handles the routing of this packet through intermediate devices that implement layer three.
+These intermediate devices are called routers, which are layer three devices. The protocol used at the network layer is the Internet Protocol (IP).
+
+Transport Layer
+The network layer is responsible for the end-to-end delivery of packets between the source host and the destination host. Within a host, there may be different processes for various applications. For example, if a process on one host wants to send a packet to a process on another host, it is the responsibility of the transport layer to deliver the packet, either using the TCP protocol or the UDP protocol.
+Each host has an IP address at the network layer. To identify different processes within a host, port numbers are used. The combination of an IP address and a port number is called a socket. A socket serves as the interface between a process and the network layer protocol, such as TCP.
+When a process sends a packet, it goes through the socket to the TCP protocol, which then delivers the packet to the destination process through its corresponding socket.
+The transport layer has two main responsibilities:
+1. End-to-End Flow Control: If a process sends packets at a high rate, the receiving process may become overwhelmed, leading to packet loss. The transport layer slows down the transmission rate to prevent this, ensuring the receiving process can handle the incoming packets. This flow control is end-to-end between the source and destination processes.
+2. End-to-End Error Control: If packets are lost or received with errors, the transport layer (specifically the TCP protocol) resends those packets to ensure they are correctly received by the destination process. Note that this error control and flow control are available in TCP but not in UDP.
+
+Application Layer
+Application layer protocols provide various services to users. You can think of these protocols as different processes.
+For example, if a user on a host wants to download a file from another host, they would use the FTP protocol at the application layer. The FTP protocol on the source host communicates with the FTP protocol on the destination host to transfer the file.
+Similarly, if a user wants to browse a website, the HTTP protocol on the user’s host communicates with the HTTP protocol on the web server, allowing the user to access the website.
+For multimedia calls, the RTP protocol on both hosts communicates to set up the call.
+The FTP and HTTP protocols at the application layer use the TCP protocol at the transport layer, while the RTP protocol uses the UDP protocol at the transport layer.
+
+TCP (Transmission Control Protocol)
+Connection-Oriented: TCP establishes a connection between the sender and receiver before data is transmitted. This ensures that data packets are delivered in the correct order.
+Reliable: TCP guarantees the delivery of data packets. If any packets are lost or corrupted during transmission, they are retransmitted.
+Flow Control: TCP manages the rate of data transmission between sender and receiver to prevent network congestion.
+Error Checking: TCP performs error-checking and ensures data integrity by using checksums.
+Use Cases: Commonly used for applications where reliability is crucial, such as web browsing (HTTP/HTTPS), email (SMTP), and file transfers (FTP).
+
+UDP (User Datagram Protocol)
+Connectionless: UDP does not establish a connection before sending data. Data packets are sent independently and may arrive out of order.
+Unreliable: UDP does not guarantee the delivery of data packets. There is no retransmission of lost or corrupted packets.
+No Flow Control: UDP does not manage the rate of data transmission, which can lead to network congestion.
+Minimal Error Checking: UDP performs basic error-checking using checksums, but it does not ensure data integrity.
+Use Cases: Commonly used for applications where speed is more important than reliability, such as live streaming, online gaming, and voice or video calls (RTP).
+
+In summary, TCP is ideal for applications requiring reliable communication, while UDP is suitable for applications where speed and low latency are more critical.
+
